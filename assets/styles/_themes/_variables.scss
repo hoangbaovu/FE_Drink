@@ -1,3 +1,8 @@
+$font-size-12px: 0.75em;
+$font-size-13px: 0.813em;
+$font-size-14px: 0.875em;
+$font-size-18px: 1.125em;
+
 // Top menu
 
 $top_menu: $primary;
@@ -20,3 +25,19 @@ $navbar-nav-link: 13px;
 $dropdown-menu-title: 14px;
 $dropdown-menu-title-color: #050505;
 $dropdown-menu-nav-link-color: #737373;
+
+// Footer
+
+$footer-title-font-size: $font-size-18px;
+$footer-link-font-size: $font-size-12px;
+$footer-link-color: #818181;
+$footer-text-font-size: $font-size-14px;
+$footer-form-border-color: #252525;
+$footer-form-btn: $footer-form-border-color;
+$footer-mail-color: #e7b14f;
+$footer-copyright-font-size: $font-size-12px;
+$footer-copyright-border: #e7e7e7;
+
+// Box brand
+
+$brand-border-color: #e8e8e8;

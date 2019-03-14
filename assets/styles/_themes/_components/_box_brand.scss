@@ -1,0 +1,24 @@
+.box-brand {
+  @include make-row();
+  display: flex;
+  border-bottom: $border-width solid $brand-border-color;
+  width: 90%;
+  margin: 30px auto 0;
+
+  &__item {
+    @include make-col-ready();
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+
+    &:nth-child(2) {
+      border-left: $border-width solid $brand-border-color;
+      border-right: $border-width solid $brand-border-color;
+    }
+
+    @include media-breakpoint-up(md) {
+      @include make-col(4);
+    }
+  }
+}
