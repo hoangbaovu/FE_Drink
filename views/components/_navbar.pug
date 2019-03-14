@@ -1,0 +1,10 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  .container
+    a.navbar-brand(href='#')
+      img(src="../../assets/images/logo.png")
+    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.ml-auto
+        each data in navbar_menu
+          +navbar_menu(data)

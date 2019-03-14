@@ -1,0 +1,12 @@
+.carousel-indicators {
+  li {
+    width: $carousel-indicator-width;
+    height: $carousel-indicator-height;
+    background-color: $carousel-indicator-bg;
+    @include opacity(1);
+  }
+
+  .active {
+    background-color: $carousel-indicator-active-bg;
+  }
+}

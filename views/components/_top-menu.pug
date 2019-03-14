@@ -1,0 +1,9 @@
+.top-menu
+  .container
+    ul.top-menu__list.list-unstyled
+      each data in top_menu
+        +top_menu(data)
+    form.top-menu__form
+      input(type='search', placeholder='Tìm kiếm ở đây', aria-label='Search')
+      button.submit(type='submit')
+        i.fas.fa-search

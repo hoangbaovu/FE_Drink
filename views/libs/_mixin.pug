@@ -1,0 +1,28 @@
+//- top_menu
+
+mixin top_menu(data)
+  li
+    a(href="#") #{data.name}
+
+//- navbar_menu
+
+mixin navbar_menu(data)
+    if (! data.dropdown )
+      li.nav-item
+        a.nav-link.nav-link-menu(href='#', title= data.name) #{data.name}
+    else
+      li.nav-item.dropdown
+        a#navbarDropdown.nav-link.nav-link-menu.dropdown-toggle(href='#', title= data.name, role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+          | #{data.name}
+        .dropdown-menu(aria-labelledby='navbarDropdown')
+          .row
+            each submenu in navbar_menu_title
+              .col-md-3
+                span.dropdown__title #{submenu.name}
+                ul.nav.flex-column
+                  each data in navbar_menu_sub
+                    li.nav-item
+                      a.nav-link(href='#') #{data.name}
+            .col-md-3
+              a(href='#')
+                img.img-fluid(src='../../assets/images/menu.jpg', alt='')
