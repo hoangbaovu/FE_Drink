@@ -1,0 +1,41 @@
+.song-page {
+  .song {
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+    }
+  }
+
+  .song__img {
+    padding: 0;
+
+    img {
+      @include size(260px);
+
+      @include media-breakpoint-down(md) {
+        @include size(136px);
+      }
+    }
+  }
+
+  .song__title {
+    @include media-breakpoint-down(md) {
+      font-size: $h5-font-size;
+    }
+  }
+
+  .song-info {
+    padding-top: 15px;
+  }
+
+  .song-info__singer {
+    margin-bottom: 20px;
+  }
+
+  .music-player {
+    margin-top: auto;
+
+    &__audio {
+      width: 100%;
+    }
+  }
+}
