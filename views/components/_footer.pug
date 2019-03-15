@@ -1,0 +1,41 @@
+include _box-brand
+
+footer.footer
+  .container
+    .row
+      .col-sm-12.col-md-2
+        h4.footer__title
+          a(href="#") Thông tin
+        ul.list-unstyled
+          each data in ['Về chúng tôi', 'Giao hàng', 'Cảm nghĩ', 'Lưu trữ', 'Chính sách riêng tư']
+            li.footer__link
+              a(href="#")= data
+      .col-sm-12.col-md-2
+        h4.footer__title
+          a(href="#") Mua hàng
+        ul.list-unstyled
+          each data in ['Vận chuyển và trả hàng', 'Vận chuyển quốc tế', 'Liên kết', 'Dịch vụ giảm giá']
+            li.footer__link
+              a(href="#")= data
+      .col-sm-12.col-md-4
+        h4.footer__title
+          a(href="#") Gửi email
+        p.footer__text Gửi email cho chúng tôi để được hỗ trợ
+        .footer__form
+          form
+            input(type='email', placeholder='Enter Your Email', aria-label='email')
+            button.submit(type='submit') Gửi
+      .col-sm-12.col-md-4
+        h4.footer__title
+          a(href="#") Liên hệ
+        p.footer__text Tầng 4, Tòa nhà Hanoi Group  Số 442 Đội Cấn, P. Cống Vị, Q. Ba Đình, Hà Nội
+        p.footer__text
+          i.fas.fa-fax &nbsp; (04) 6674 2332 - &nbsp;
+          i.fas.fa-fax &nbsp; (04) 3786 8904
+        p.footer__text
+          i.fas.fa-fax &nbsp; (08) 6680 9686 &nbsp;
+          i.fas.fa-envelope &nbsp;
+          a.footer__mail(href="emailto:support@bizweb.vn") Support@bizweb.vn
+  .footer-copyright
+    .container
+      p &copy; Copyright 2008-2014 DKT Technology JSC

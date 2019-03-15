@@ -1,0 +1,86 @@
+.footer {
+  font-family: "Times New Roman", Times, serif;
+  margin-top: 60px;
+
+  &__title {
+    font-size: $footer-title-font-size;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    color: $footer-link-color;
+    font-size: $footer-link-font-size;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    font-size: $footer-text-font-size;
+    color: $footer-link-color;
+  }
+
+  &__mail {
+    font-size: $font-size-14px;
+    color: $footer-mail-color;
+    font-style: italic;
+  }
+
+  &__form {
+    display: flex;
+
+    form {
+      margin: 0;
+    }
+    input {
+      border: $border-width solid $footer-form-border-color;
+      padding-left: 14px;
+      height: 30px;
+
+      @include media-breakpoint-up(lg) {
+        @include size(243px, auto);
+      }
+
+      &::placeholder {
+        font-size: $footer-link-font-size;
+        font-style: italic;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .submit {
+      background: $footer-form-btn;
+      border: 0;
+      color: $white;
+      margin: 2px 0 0 -56px;
+      font-size: 13px;
+      position: relative;
+
+      @include size(52px, 27px);
+
+      &::after {
+        border-color: transparent transparent transparent $footer-form-btn;
+        border-style: solid;
+        border-width: 14px 0 14px 18px;
+        content: "";
+        position: absolute;
+        right: -20px;
+        top: -1px;
+        @include size(20px);
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.footer-copyright {
+  border-top: $border-width solid $footer-copyright-border;
+  color: $footer-link-color;
+  font-size: $footer-copyright-font-size;
+  padding: 17px 0 0;
+}
