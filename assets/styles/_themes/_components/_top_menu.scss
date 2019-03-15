@@ -1,0 +1,74 @@
+.top-menu {
+  background: rgba($white, 0.1);
+  padding: 12px 0;
+  box-shadow: $box-shadow;
+  z-index: 1;
+  width: 100%;
+  @extend .position-absolute;
+
+  .container {
+    @extend .d-flex;
+  }
+
+  &__list {
+    @extend .d-flex;
+    font-size: $top_menu-font-size;
+    margin: 0;
+
+    li {
+      margin: 0 12px;
+      @extend .position-relative;
+
+      a {
+        color: $white;
+
+        @include hover {
+          color: $top_menu;
+        }
+      }
+
+      &::after {
+        content: "-";
+        color: $white;
+        right: -14px;
+        top: 0;
+        @extend .position-absolute;
+      }
+
+      &:last-child::after {
+        content: "";
+      }
+    }
+  }
+
+  &__form {
+    margin: -5px 0 0;
+    @extend .ml-auto;
+
+    input {
+      background: transparent;
+      border: 0;
+      border-left: 1px solid $white;
+      font-size: $top_menu-font-size;
+      padding-left: 12px;
+
+      @include media-breakpoint-up(lg) {
+        @include size(220px, auto);
+      }
+
+      &::placeholder {
+        color: rgba($white, 0.5);
+        font-style: italic;
+      }
+    }
+
+    .submit {
+      background-color: inherit;
+      @extend .border-0;
+
+      i {
+        color: $white;
+      }
+    }
+  }
+}
