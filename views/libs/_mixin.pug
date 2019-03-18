@@ -26,3 +26,64 @@ mixin navbar_menu(data)
             .col-md-3
               a(href='#')
                 img.img-fluid(src='../../assets/images/menu.jpg', alt='')
+
+//- header title
+
+mixin n-header-title(name="Header title")
+  h3.n-header-title
+    a(href="#")= name
+
+//- Products
+
+mixin products(asset="../assets/images/products/1.jpg")
+  .products-item&attributes(attributes)
+    a.products-item__img(href="#")
+      span
+      img(src=asset)
+    .products-item__view
+      a(href="#")
+        i.fas.fa-heart
+        | Yêu thích
+      a(href="#")
+        i.fas.fa-signal
+        | So sánh
+      a(href="#")
+        i.fas.fa-compress
+    .products-item__info
+      h5.products-item__info__name
+        a(href="#") Rượu vang Đà Lạt
+      p.price
+        span.price__new
+          | 370.000
+          sup đ
+        span.price__old
+          | 450.000
+          sup đ
+      a.btn.btn-primary.btn-wine(href="#") Add to card
+
+//- home-list-product-fluid
+
+mixin home-wine-1987(number)
+  .home-wine-1987-item
+    a.home-wine-1987-item__img(href="/")
+      img(src=`../../assets/images/home/wine-1987_${number}.jpg`)
+    .home-wine-1987-item__view
+      span.year 1987
+      span.text Rượu
+
+//- card-wine
+
+mixin card-wine(asset="../assets/images/blog/blog_1.jpg")
+  .card.card-wine
+    .card-wine-item
+      a(href="#")
+        img.card-img-top(src= asset, alt='Card image cap')
+      .card-view
+        a.rounded-circle(href="#")
+          i.fas.fa-link
+    .card-body
+      h5.card-title
+        a(href="#") Vang Thăng Long Classic
+      p.card-text
+        | Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang Nổ thăng long tạo cảm giác hương phấn, êm dịu, vui tươi, sản phẩm được đóng chai dung tích 750ml...
+      a.btn-readmore(href='#') Read more

@@ -1,0 +1,27 @@
+.mx-100 {
+  margin: 100px 0;
+}
+
+.px-100 {
+  padding: 100px 0;
+}
+
+.n-header-title {
+  @extend .text-center;
+  @extend .text-uppercase;
+  font-size: $font-size-21px;
+  letter-spacing: 0.2em;
+
+  a {
+    @extend .position-relative;
+
+    &::after {
+      content: "";
+      display: flex;
+      background: no-repeat center/ 189px 10px
+        url("../../assets/images/common/n-header-title.png");
+      height: 10px;
+      margin: 12px 0 18px;
+    }
+  }
+}

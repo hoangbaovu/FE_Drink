@@ -1,0 +1,65 @@
+.card-wine {
+  border: 0;
+
+  .card-wine-item {
+    @extend .position-relative;
+    @extend .overflow-hidden;
+  }
+
+  @include hover {
+    .card-view {
+      opacity: 1;
+    }
+  }
+
+  .card-view {
+    @extend .position-absolute;
+    color: $white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    opacity: 0;
+    display: flex;
+    @include transition(all, .3s, ease-in-out);
+    @include size(100%, 220px);
+    margin: 0 auto;
+
+    &::after {
+      @extend .position-absolute;
+      content: '';
+      background: rgba($white, 0.3);
+      padding-bottom: 141.42136%;
+      width: 100%;
+      bottom: 0;
+      left: -5px;
+      transform: rotate(58.6deg);
+      transform-origin: left bottom;
+    }
+  }
+
+  .rounded-circle {
+    @extend .position-absolute;
+    background: $white;
+    padding: 20px;
+    z-index: 2;
+  }
+
+  .card-body {
+    padding: 27px 0 0;
+  }
+
+  .card-title {
+    @extend .text-uppercase;
+    font-size: $font-size-18px;
+  }
+
+  .card-text {
+    color: #818181;
+    font-size: $font-size-14px;
+    margin-bottom: 0;
+  }
+}

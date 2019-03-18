@@ -1,7 +1,13 @@
 $font-size-12px: 0.75em;
 $font-size-13px: 0.813em;
 $font-size-14px: 0.875em;
+$font-size-16px: 1em;
 $font-size-18px: 1.125em;
+$font-size-21px: 1.313em;
+$font-size-25px: 1.563em;
+$font-size-34px: 2.125em;
+$font-size-39px: 2.438em;
+$font-size-72px: 4.5em;
 
 // Top menu
 
@@ -22,7 +28,7 @@ $navbar-nav-link: 13px;
 
 // Dropdown menu
 
-$dropdown-menu-title: 14px;
+$dropdown-menu-title: $font-size-14px;
 $dropdown-menu-title-color: #050505;
 $dropdown-menu-nav-link-color: #737373;
 
@@ -41,3 +47,11 @@ $footer-copyright-border: #e7e7e7;
 // Box brand
 
 $brand-border-color: #e8e8e8;
+
+// Home Product
+$home-product-desc: #8e8e8e;
+
+// Product
+$product-viewmore-link: #818181;
+$product-item-info-title: $font-size-14px;
+$product-price-old: #b4b4b4;

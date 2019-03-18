@@ -1,0 +1,215 @@
+.home-intro {
+  background:
+    no-repeat top -80px left -280px
+      url("../../assets/images/common/bg_top_left.jpg"),
+    no-repeat top right
+    url("../../assets/images/common/bg_top_right.jpg");
+}
+
+.home-intro-text {
+  @extend .text-center;
+  color: #818181;
+  font-size: $font-size-16px;
+  margin: 0 auto 27px;
+
+  @include media-breakpoint-up(lg) {
+    padding: 0 100px;
+  }
+}
+
+.home-product-box {
+  background: no-repeat url("../../assets/images/common/home-product-box.jpg");
+  padding-top: 346px;
+}
+
+.home-product-box-show {
+  @include make-row();
+  background: $white;
+  margin: 0 auto;
+
+  @include media-breakpoint-up(lg) {
+    width: 945px;
+    padding: 97px;
+  }
+
+  &__left {
+    @include make-col(7);
+
+    .home-product-img {
+      @extend .position-relative;
+      @extend .overflow-hidden;
+
+      span {
+        @extend .position-absolute;
+        color: $white;
+        font-size: $font-size-39px;
+        left: 10px;
+        top: 9px;
+        transform: rotate(-45deg);
+        z-index: 2;
+      }
+
+      &::after {
+        content: "";
+        @extend .position-absolute;
+        border-style: solid;
+        border-width: 122px 122px 0 0;
+        border-color: $primary transparent transparent transparent;
+        top: 0;
+        left: 0;
+        @include size(122px);
+      }
+
+      &::before {
+        @extend .position-absolute;
+        content: "";
+        background: $primary;
+        top: 0;
+        left: -89px;
+        transform: rotate(-45deg);
+        @include size(100%, 1px);
+      }
+
+      img {
+        width: 100%;
+        margin-top: 22px;
+      }
+    }
+
+  }
+
+  &__right {
+    @include media-breakpoint-up(lg) {
+      @include make-col(5);
+    }
+  }
+}
+
+.home-product-title {
+  @extend .text-uppercase;
+  font-size: $font-size-25px;
+
+  &::after {
+    @extend .d-block;
+    content: "";
+    background: no-repeat left/ 64px 8px
+      url("../../assets/images/common/n-header-title-2.png");
+    height: 10px;
+  }
+}
+
+.home-product-price {
+  @extend .d-block;
+  color: $primary;
+  font-size: $font-size-34px;
+  margin: 32px 0;
+}
+
+.home-product-desc {
+  color: $home-product-desc;
+  font-size: $font-size-13px;
+  margin: 22px 0 46px;
+}
+
+.home-product-day {
+  display: flex;
+  flex-wrap: wrap;
+  color: $primary;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 calc(50%);
+    border-right: $border-width solid $primary;
+    border-bottom: $border-width solid  $primary;
+    padding: 20px;
+
+    &:nth-child(odd) {
+      border-left: $border-width solid $primary;
+      flex: 0 0 50%;
+    }
+
+    &:nth-child(1), &:nth-child(2) {
+      border-top: $border-width solid $primary;
+    }
+  }
+
+  .number, .day {
+    display: flex;
+  }
+
+  .number {
+    font-size: $font-size-34px;
+  }
+
+  .day {
+    font-size: $font-size-14px;
+    @extend .text-uppercase;
+  }
+}
+
+// .home-wine-1987
+
+.home-wine-1987-item {
+
+  %psudo {
+    @extend .position-absolute;
+    content: "";
+    border-top: $border-width solid $white;
+    width: 268px;
+    left: -10px;
+  }
+
+  @include hover {
+
+    .home-wine-1987-item__view {
+      @include opacity(1);
+    }
+  }
+
+  &__view {
+    @extend .position-absolute;
+    background: rgba($bg-black, 0.5);
+    border: 4px solid $primary;
+    color: $white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    opacity: 0;
+    display: flex;
+    @extend .text-uppercase;
+    @include transition(all, .3s, ease-in-out);
+    @include size(100%);
+
+    .year {
+      @extend .position-absolute;
+      font-size: $font-size-12px;
+      top: 80px;
+      letter-spacing: 0.5em;
+    }
+
+    .text {
+      @extend .position-relative;
+      font-size: $font-size-72px;
+      border-left: $border-width solid $white;
+      border-right: $border-width solid $white;
+      padding: 2px 10px;
+
+      &::before {
+        @extend %psudo;
+        top: 10px;
+      }
+
+      &::after {
+        @extend %psudo;
+        bottom: 10px;
+      }
+    }
+  }
+}
