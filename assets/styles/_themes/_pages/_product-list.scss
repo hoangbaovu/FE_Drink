@@ -28,13 +28,15 @@
   &__topbar {
     border: $border-width solid $gray-300;
     padding: 0 13px;
-    height: 40px;
+    height: $s40;
 
     .sort {
+      .active {
+        color: #f26522;
+      }
 
       a {
         color: $gray-600;
-
         @include hover {
           color: #f26522;
         }
@@ -57,7 +59,7 @@
     .page-link {
       border: 0;
       font-size: $font-size-18px;
-      margin: 10px 0;
+      margin: $s10 0;
     }
   }
 }

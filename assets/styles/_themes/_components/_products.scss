@@ -19,6 +19,43 @@
     }
   }
 
+  &--list {
+    border-bottom: $border-width solid $gray-200;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+
+    .products-item__info {
+      align-items: flex-start;
+
+      &__name {
+        font-size: $font-size-25px;
+      }
+    }
+
+    .products-item__view {
+      @extend .position-relative;
+      background: none;
+      width: auto;
+      top: 100%;
+      bottom: 20px;
+      @include opacity(1);
+
+      .btn-wine {
+        color: $white;
+      }
+
+      a {
+        margin-right: 30px;
+      }
+    }
+
+    .price {
+      &__new {
+        font-size: $font-size-34px;
+      }
+    }
+  }
+
   &__img {
     @extend .position-relative;
     @extend .overflow-hidden;
@@ -111,6 +148,12 @@
         @include transition(all, 0.1s, ease-in-out);
       }
     }
+  }
+
+  &__desc {
+    color: $gray-700;
+    font-size: $font-size-13px;
+    margin-bottom: $s60;
   }
 
   // Product Riboon Sale
