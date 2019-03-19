@@ -1,0 +1,50 @@
+// Aside
+
+.aside {
+
+  .n-header-title-2 {
+    @extend .letter-space;
+    font-size: $font-size-16px;
+
+    a::after {
+      margin: 8px 0 17px;
+    }
+  }
+}
+
+.aside-menu {
+  @extend .my-b-20;
+
+  &__ul {
+    margin: 0;
+
+    .active {
+      color: $primary;
+      list-style-type: circle;
+      margin-left: 20px;
+
+      a {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.aside-tag {
+  &__link {
+    background: $white;
+    border: $border-width solid #e6e6e6;
+    border-radius: 0;
+    color: $black;
+    padding: 5px 10px;
+    margin: 0 9px 11px 0;
+    @extend .d-inline-flex;
+    @include transition(all, 0.3s, ease-in-out);
+
+    @include hover {
+      background: $primary;
+      color: $white;
+      text-decoration: $link-decoration;
+    }
+  }
+}

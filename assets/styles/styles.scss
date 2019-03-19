@@ -17,6 +17,7 @@
 
 // Components
 
+@import "_themes/_components/_aside";
 @import "_themes/_components/_btn";
 @import "_themes/_components/_breadcrumb";
 @import "_themes/_components/_card";
@@ -27,8 +28,10 @@
 @import "_themes/_components/_footer";
 @import "_themes/_components/_box_brand";
 @import "_themes/_components/_products";
+@import "_themes/_components/_jumbotron";
 
 // Pages
 
 @import "_themes/_pages/_home";
-@import "_themes/_pages/_product-detail"
+@import "_themes/_pages/_product-detail";
+@import "_themes/_pages/_product-list";

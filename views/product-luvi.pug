@@ -1,0 +1,60 @@
+extends ./layouts/layouts.pug
+
+block title
+  | Product List - Luvi
+
+block content
+  .container
+    include components/_breadcrumb
+    include components/_jumbotron
+    .row
+      .aside.product-list__left
+        section.aside-menu
+          +n-header-title-2("Danh mục sản phẩm")
+          span.text-uppercase Rượu ngoại
+          ul.aside-menu__ul.list-unstyled
+            li.active
+              a(href="#") Johnnie Walker (46)
+            - for (var i = 0; i < 16; i++)
+              li
+                a(href="#") Rượu Chivas (26)
+          span.text-uppercase Rượu vang
+          ul.aside-menu__ul.list-unstyled
+            - for (var i = 0; i < 16; i++)
+              li
+                a(href="#") Rượu Chivas (26)
+        section
+          +n-header-title-2("So sánh sản phẩm")
+          p Bạn chưa có sản phẩm nào để so sánh
+        section
+          +n-header-title-2("Tag sản phẩm")
+          .aside-tag
+            each data in tag
+              +tag(data)
+        section.aside-adv
+          a(href="#")
+            img(src="../assets/images/common/adv.jpg", alt="")
+      .product-list__right
+        .product-list__topbar.d-flex.justify-content-center.align-items-center
+          .sort
+            a.sort__grid(href="#")
+              i.fas.fa-th
+            a.sort__list(href="#")
+              i.fas.fa-th-list
+          ul.pagination.pagination-sm.justify-content-center.align-items-center.ml-auto
+            li.page-item.disabled
+              a.page-link(href='#', tabindex='-1')
+                i.fas.fa-caret-left
+            li.page-item.active
+              a.page-link(href='#') 1
+            - for (var i = 2; i < 6; i++)
+              li.page-item
+                a.page-link(href='#') #{i}
+            li.page-item
+              a.page-link(href='#')
+                i.fas.fa-caret-right
+        .product-list__wrapper
+          .row
+            - for (i = 1; i < 13; i++)
+              .col-md-4
+                +products(`../assets/images/products/${i}.jpg`)

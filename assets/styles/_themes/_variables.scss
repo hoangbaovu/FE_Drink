@@ -9,6 +9,12 @@ $font-size-34px: 2.125em;
 $font-size-39px: 2.438em;
 $font-size-72px: 4.5em;
 
+// px
+$s10: 10px;
+$s20: 20px;
+$s60: 60px;
+$s100: 100px;
+
 // Top menu
 
 $top_menu: $primary;
@@ -60,3 +66,6 @@ $product-price-old: #b4b4b4;
 $breadcrumb-bg: $white;
 $breadcrumb-font-size: $font-size-14px;
 $breadcrumb-active-color: $primary;
+
+// n-header
+$n-header-height: $s10;
