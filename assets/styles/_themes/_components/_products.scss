@@ -1,0 +1,208 @@
+.products-item {
+  position: relative;
+  display: block;
+
+  &:hover {
+    .products-item__view {
+      opacity: 1;
+    }
+
+    .products-item__info__name {
+      a {
+        color: $primary;
+      }
+    }
+
+    .products-item__info .btn {
+      background: $primary;
+    }
+  }
+
+  &__img {
+    position: relative;
+    overflow: hidden;
+    display: block;
+
+    img {
+      @include size(263px, 327px);
+    }
+
+    span {
+      color: $white;
+      font-size: $font-size-16px;
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      transform: rotate(-45deg);
+      z-index: 2;
+      display: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      border-style: solid;
+      border-width: 56px 56px 0 0;
+      border-color: $primary transparent transparent transparent;
+      top: 0;
+      left: 0;
+      @include size(56px);
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      background: $primary;
+      top: 0;
+      left: -67px;
+      transform: rotate(-45deg);
+      @include size(100%, 1px);
+      display: none;
+    }
+  }
+
+  &__view {
+    background: $bg-black;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 297px;
+    display: flex;
+    opacity: 0;
+    @include transition(all, .3s, ease-in-out);
+
+    a {
+      color: $product-viewmore-link;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1 auto;
+      text-align: center;
+      height: 30px;
+      text-decoration: none;
+
+      @include hover {
+        color: $primary;
+      }
+
+      i {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__name {
+      font-size: $product-item-info-title;
+      margin-top: 26px;
+      @extend .text-uppercase;
+
+      a {
+        @include transition(all, 0.1s, ease-in-out);
+      }
+    }
+  }
+
+  // Product Riboon Sale
+
+  &--sale {
+
+    .products-item__img {
+
+      span {
+        @extend .d-block;
+        &::after {
+          content: "Sale";
+        }
+      }
+
+      &::after {
+        border-top-color: $primary;
+        @extend .d-block;
+      }
+
+      &::before {
+        background-color: $primary;
+        @extend .d-block;
+      }
+    }
+  }
+
+  // Product Riboon New
+
+  &--new {
+
+    .products-item__img {
+
+      span {
+        @extend .d-block;
+
+        &::after {
+          content: "Mới";
+        }
+      }
+
+      &::after {
+        border-top-color: $green;
+        @extend .d-block;
+      }
+
+      &::before {
+        background-color: $green;
+        @extend .d-block;
+      }
+    }
+  }
+
+  // Product Riboon Hot
+
+  &--hot {
+
+    .products-item__img {
+
+      span {
+        @extend .d-block;
+
+        &::after {
+          content: "Hot";
+        }
+      }
+
+      &::after {
+        border-top-color: $red;
+        @extend .d-block;
+      }
+
+      &::before {
+        background-color: $red;
+        @extend .d-block;
+      }
+    }
+  }
+}
+
+.price {
+
+  &__new {
+    color: $primary;
+    font-size: $font-size-21px;
+  }
+
+  &__old {
+    color: $product-price-old;
+    font-size: $font-size-14px;
+    text-decoration: line-through;
+    margin-left: 5px;
+
+    &::before {
+      content: "-";
+      margin-right: 5px;
+    }
+  }
+}

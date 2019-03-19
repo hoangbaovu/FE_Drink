@@ -1,0 +1,39 @@
+.customers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__quote {
+    margin-bottom: 30px;
+
+    img {
+      @include size(63px);
+    }
+  }
+
+  &__comment {
+    @extend .text-center;
+    color: #818181;
+    font-size: $font-size-14px;
+  }
+
+  &__avatar {
+    margin: 30px 0 22px;
+    @extend .d-block;
+  }
+
+  &__name {
+    @extend .text-uppercase;
+    @extend .text-center;
+    margin: 0;
+  }
+
+  &__job {
+    @extend .text-center;
+    color: #a7a7a7;
+    font-size: $font-size-14px;
+    font-style: italic;
+    margin: -6px 0 0;
+  }
+}

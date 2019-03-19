@@ -4,3 +4,96 @@ block title
   | Trang Chủ
 
 block content
+  section.home-intro.px-100
+    .container
+      +n-header-title("Giới thiệu")
+
+      p.home-intro-text
+        | Mriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui
+        | faciteorum claritatem. Investigtiones demonstraverunt lectores legere me lius quod ii legunt saepius.Claritas est etiam processus dynamicus,
+        | qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putam
+      .text-center
+        a.btn.btn-primary.btn-wine(href="#") Xem thêm
+  section.home-product
+    .container
+      .home-product-box
+        .home-product-box-show
+          .home-product-box-show__left
+            .home-product-img
+              span Sale
+              img(src="/assets/images/products/14.jpg", alt="")
+          .home-product-box-show__right
+            h4.home-product-title
+              a(href="#") Rượu nho năm 1987
+            span.home-product-price
+              | 330.000
+              sup đ
+            a.btn.btn-primary.btn-wine(href="#") Add to card
+            p.home-product-desc
+              | Một hợp chất có trong rượu vang được gọi là resveratro có khả năng làm tăng tối đa tuổi thọ. Resveratro còn có khả năng ngăn chặn mật độ ôxy hoá của protein béo.
+            .home-product-day
+              .home-product-day__item
+                span.number 334
+                span.day Ngày
+              .home-product-day__item
+                span.number 26
+                span.day Giờ
+              .home-product-day__item
+                span.number 60
+                span.day Phút
+              .home-product-day__item
+                span.number 15
+                span.day Giây
+  section.home-list-product
+    .container
+      +n-header-title("Sản phẩm mới")
+      .products
+        .row
+          .col-sm-12.col-md-3
+            +products("../assets/images/products/1.jpg").products-item--sale
+          .col-sm-12.col-md-3
+            +products("../assets/images/products/2.jpg").products-item--new
+          .col-sm-12.col-md-3
+            +products("../assets/images/products/3.jpg").products-item--hot
+          .col-sm-12.col-md-3
+            +products("../assets/images/products/4.jpg")
+  section.home-wine-1987.mx-100.overflow-hidden
+    .row.no-gutters
+      - for (var item = 1; item <= 8; item++)
+        .col-sm-12.col-md-3
+          +home-wine-1987(item)
+  section
+    .container
+      +n-header-title("Sản phẩm bán chạy")
+      .products
+        .row
+          .col-sm-12.col-md-3
+            +products("../assets/images/products/7.jpg")
+          .col-sm-12.col-md-3
+            +products("../assets/images/products/8.jpg")
+          .col-sm-12.col-md-3
+            +products("../assets/images/products/9.jpg")
+          .col-sm-12.col-md-3
+            +products("../assets/images/products/10.jpg")
+  section.mx-100
+    .container
+      .row
+        .col-md-8
+          +n-header-title("Tin tức & blog")
+          .row
+            .col-md-6
+              +card-wine("../assets/images/blog/blog_1.jpg")
+            .col-md-6
+              +card-wine("../assets/images/blog/blog_2.jpg")
+        .col-md-4
+          +n-header-title("Khách hàng")
+          .customers
+            img.customers__quote(src="../assets/images/common/quote.png")
+            p.customers__comment
+              | Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang Nổ thăng long ...
+            a.btn-readmore(href="#") Read more
+            .customers__info
+              a.customers__avatar(href="#")
+                img(src="../assets/images/common/customer.png")
+              p.customers__name Giang LT
+              p.customers__job Graphic design
