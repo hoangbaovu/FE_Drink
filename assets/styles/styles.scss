@@ -18,6 +18,7 @@
 // Components
 
 @import "_themes/_components/_btn";
+@import "_themes/_components/_breadcrumb";
 @import "_themes/_components/_card";
 @import "_themes/_components/_customers";
 @import "_themes/_components/_top_menu";
@@ -30,7 +31,4 @@
 // Pages
 
 @import "_themes/_pages/_home";
-
-// Pages
-
-@import "_themes/_pages/_home";
+@import "_themes/_pages/_product-detail"
