@@ -1,0 +1,259 @@
+.product-detail {
+  @include make-row();
+
+  &__left {
+
+    @include media-breakpoint-up(sm) {
+      @include make-col(12);
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(7);
+    }
+  }
+
+  &__right {
+    @include media-breakpoint-up(sm) {
+      @include make-col(12);
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(5);
+    }
+  }
+
+  &__bottom {
+
+    .nav-pills {
+      .nav-link {
+        @extend .text-uppercase;
+        border-radius: 0;
+        letter-spacing: 0.2em;
+      }
+    }
+
+    .tab-pane {
+      color: #8e8e8e;
+      font-size: $font-size-21px;
+    }
+  }
+
+  .thumbs {
+
+    @include media-breakpoint-down(sm) {
+      display: flex;
+      @include size(100%, auto);
+    }
+
+    @include media-breakpoint-up(lg) {
+      float: left;
+      margin-right: 30px;
+      width: 67px;
+    }
+
+    &__image {
+      border-radius: 1px;
+      border: 1px solid #e2e2e3;
+      display: block;
+      margin-bottom: 8px;
+      position: relative;
+      width: 100%;
+
+      @include media-breakpoint-down(sm) {
+        margin-right: 10px;
+      }
+
+      &.active {
+        border-color: $primary;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  .big {
+    float: left;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__express {
+    @extend .d-flex;
+    margin: 20px 0;
+
+    i {
+      margin-right: 10px;
+    }
+
+    a {
+      color: #818181;
+      margin-right: 20px;
+
+      @include hover {
+        color: $primary;
+      }
+    }
+  }
+
+  &__desc {
+
+    .text-desc {
+      color: #8e8e8e;
+      font-size: $font-size-13px;
+    }
+  }
+}
+
+.product-info {
+  &__name {
+    @extend .text-uppercase;
+    font-size: $font-size-25px;
+
+    &::after {
+      @extend .d-block;
+      content: "";
+      background: no-repeat left/ 64px 8px
+        url("../../assets/images/common/n-header-title-2.png");
+      height: 10px;
+    }
+  }
+
+  &__price {
+    @extend .d-block;
+    color: $primary;
+    font-size: $font-size-34px;
+    margin: 32px 0;
+  }
+
+  &__review {
+    @extend .d-flex;
+    border-top: $border-width solid $gray-300;
+    border-bottom: $border-width solid $gray-300;
+    padding: 8px 0 2px;
+
+    .review, .add-review {
+      margin: 2px;
+    }
+
+    .review {
+      margin-left: 10px;
+
+      &::after {
+        content: "";
+        border-right: $border-width solid $gray-300;
+        margin: 10px;
+      }
+    }
+  }
+
+  .title-label {
+    @extend .text-uppercase;
+    font-size: $font-size-16px;
+    margin: 10px 0;
+  }
+}
+
+.starrating {
+  @extend .d-flex;
+  @extend .flex-row-reverse;
+
+  > input {
+    @extend .d-none;
+
+    &:checked {
+
+      ~ label {
+        color: $yellow;
+      }
+    }
+
+    @include hover {
+
+      ~ label {
+        color: $yellow;
+      }
+    }
+  }
+
+  > label {
+    color: $black;
+
+    &::before {
+      content: "\f005";
+      display: inline-block;
+      margin: 2px;
+      font-size: 1em;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+    }
+  }
+}
+
+.choose-color {
+
+  margin: 25px 0;
+
+  label {
+    position: relative;
+    background-color: #aaa;
+    text-align: center;
+    height: 30px;
+    width: 30px;
+    display: block;
+    cursor: pointer;
+    outline: 1px solid transparent;
+    float: left;
+    margin-right: 20px;
+    text-indent: -9999;
+  }
+
+  input {
+    display: none;
+    &:checked {
+
+      + label {
+        outline: 1px solid #333;
+        outline-offset: 2px;
+      }
+    }
+  }
+
+  .yellow-label {
+    background: $yellow;
+  }
+
+  .black-label {
+    background: $black;
+  }
+
+  .red-label {
+    background: $red;
+  }
+}
+
+.choose-quantity {
+
+  .input-group {
+    @include media-breakpoint-up(lg) {
+      @include size(120px, auto);
+    }
+
+    .btn {
+      background: #e6e6e6;
+    }
+  }
+
+  .form-control {
+    border: 2px solid #e6e6e6;
+  }
+
+  .btn-wine {
+    margin-left: 18px;
+  }
+}

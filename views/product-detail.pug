@@ -1,0 +1,123 @@
+extends ./layouts/layouts.pug
+
+block title
+  | Product Detail
+
+block content
+  .container
+    include components/_breadcrumb
+    .product-detail
+      .product-detail__left
+        .thumbs
+          a.thumbs__image.active(href="#")
+            span
+              img(src="../assets/images/products/1.jpg", alt="")
+          a.thumbs__image(href="#")
+            span
+              img(src="../assets/images/products/2.jpg", alt="")
+          a.thumbs__image(href="#")
+            span
+              img(src="../assets/images/products/3.jpg", alt="")
+          a.thumbs__image(href="#")
+            span
+              img(src="../assets/images/products/4.jpg", alt="")
+          a.thumbs__image(href="#")
+            span
+              img(src="../assets/images/products/4.jpg", alt="")
+        .big
+          span.big-image
+            img(src="../assets/images/products/1.jpg", alt="")
+      .product-detail__right
+        .product-info
+          h4.product-info__name
+            a(href="#") Rượu nho năm 1987
+          span.product-info__price
+              | 330.000
+              sup đ
+          .product-info__review
+            .starrating
+              input#star1(type='radio', name='rating', value='1')
+              label(for='star1', title='1 star')
+              input#star2(type='radio', name='rating', value='2')
+              label(for='star2', title='2 star')
+              input#star3(type='radio', name='rating', value='3')
+              label(for='star3', title='3 star')
+              input#star4(type='radio', name='rating', value='4')
+              label(for='star4', title='4 star')
+              input#star5(type='radio', name='rating', value='5')
+              label(for='star5', title='5 star')
+            a.review(href="#") 1 Review(S)
+            a.add-review(href="#") Add Your Review
+          .choose-color
+            p.title-label Màu sắc
+            input#yellow(type='radio', name='radio1', value='yellow')
+            label.yellow-label(for='yellow') Yellow
+            input#black(type='radio', name='radio1', value='black', checked)
+            label.black-label(for='black') Black
+            input#red(type='radio', name='radio1', value='red')
+            label.red-label(for='red') red
+          .clearfix
+          .choose-size
+            p.title-label Kích cỡ
+            select#inlineFormCustomSelectPref.custom-select.my-1.mr-sm-2
+              option(value='1', selected='') Loại nhỏ
+              option(value='2') Loại to
+          .choose-quantity
+            p.title-label Số lượng
+            .d-flex
+              .input-group
+                .input-group-prepend
+                  button#minus-btn.btn.btn-sm
+                    i.fa.fa-minus
+                input#qty_input.form-control.form-control-sm(type='number', value='1', min='1')
+                .input-group-prepend
+                  button#plus-btn.btn.btn-sm
+                    i.fa.fa-plus
+              button.btn.btn-primary.btn-wine Add to card
+          .product-detail__express
+            a(href="#")
+              i.fas.fa-heart
+              | Yêu thích
+            a(href="#")
+              i.fas.fa-signal
+              | So sánh
+            a(href="#")
+              i.fas.fa-envelope
+              | Email
+          .product-detail__desc
+            p.title-label Mô tả
+            p.text-desc Một hợp chất có trong rượu vang được gọi là resveratro có khả năng làm tăng tối đa tuổi thọ. Resveratro còn có khả năng ngăn chặn mật độ ôxy hoá của protein béo.
+      .product-detail__bottom
+        .row
+          .col-md-8
+            ul#pills-tab.nav.nav-pills.mb-3(role='tablist')
+              li.nav-item
+                a#pills-intro-tab.nav-link.active(data-toggle='pill', href='#pills-intro', role='tab', aria-controls='pills-intro', aria-selected='true') Đặc điểm nổi bật
+              li.nav-item
+                a#pills-info-tab.nav-link(data-toggle='pill', href='#pills-info', role='tab', aria-controls='pills-info', aria-selected='false') Thông tin sản phẩm
+              li.nav-item
+                a#pills-review-tab.nav-link(data-toggle='pill', href='#pills-review', role='tab', aria-controls='pills-review', aria-selected='false') Đánh giá
+            #pills-tabContent.tab-content
+              #pills-intro.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='pills-intro-tab')
+                | Đừng nghĩ rằng chỉ vì đôi chân to mà bạn không thể mặc được món đồ nào khác ngoài quần dài. Sau đây là những item vừa trendy lại vừa có tác dụng rất hiệu quả trong việc điều chỉnh đôi chân to của bạn.Mùa hè là mùa của những bộ cánh thoải mái,
+                | thoáng mát và hẳn cô gái nào cũng muốn khoe chân tối đa. Tuy nhiên, điều này lại không hề dễ dàng đối với những cô nàng sở hữu đôi chân to.Đừng nghĩ rằng chỉ vì đôi chân to mà bạn không thể mặc được món đồ nào khác ngoài quần dài. Sau đây là những item vừa trendy lại vừa có tác dụng rất hiệu quả trong việc điều chỉnh đôi chân to của bạn.
+                | Mùa hè là mùa của những bộ cánh thoải mái, thoáng mát và hẳn cô gái nào cũng muốn khoe chân tối đa. Tuy nhiên, điều này lại không hề dễ dàng đối với những cô nàng sở hữu đôi chân to. Vậy diện đồ thế nào để vừa tạo cảm giác nhẹ nhàng nhưng lại khéo léo giấu được nhược điểm ấy? Sau đây, chúng tôi xin đưa ra gợi ý về loạt item
+                | mà các cô nàng chân to nên gắn bó trong mùa hè này.
+              #pills-info.tab-pane.fade(role='tabpanel', aria-labelledby='pills-info-tab') Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores assumenda, repellat consequatur consequuntur quam quae itaque voluptatum ipsa expedita culpa eligendi eveniet aperiam iusto minima magnam amet! Iste, nisi quibusdam?
+              #pills-review.tab-pane.fade(role='tabpanel', aria-labelledby='pills-review-tab') Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate sequi eos explicabo enim velit facilis doloribus, autem voluptates magnam perferendis!
+          .col-md-4
+            a(href="#")
+              img(src="../assets/images/common/product-detail.jpg", alt="")
+  section.mx-100
+    .container
+      +n-header-title("Sản phẩm liên quan")
+      .products
+        .row
+          .col-sm-12.col-md-3
+            +products("../assets/images/products/7.jpg")
+          .col-sm-12.col-md-3
+            +products("../assets/images/products/8.jpg")
+          .col-sm-12.col-md-3ducts/9.jpg")
+          .col-sm-12.col-md-3
+            +products("../assets/images/pro
+            +products("../assets/images/products/10.jpg")
