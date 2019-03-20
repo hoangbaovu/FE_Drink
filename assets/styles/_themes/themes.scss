@@ -53,3 +53,9 @@
     }
   }
 }
+
+.n-header-title-3 {
+  @extend .text-uppercase;
+  font-size: $font-size-18px;
+  margin-bottom: 40px;
+}

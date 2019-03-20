@@ -2,6 +2,8 @@
 .breadcrumb {
   background: $breadcrumb-bg;
   font-size: $breadcrumb-font-size;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .breadcrumb-item {
