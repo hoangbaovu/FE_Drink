@@ -3,6 +3,9 @@ extends ./layouts/layouts.pug
 block title
   | Trang Chủ
 
+block append carousel
+  include components/_carousel.pug
+
 block content
   section.home-intro.px-100
     .container

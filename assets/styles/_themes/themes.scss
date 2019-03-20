@@ -1,27 +1,55 @@
+.my-b-20 {
+  margin-bottom: $s20;
+}
+
 .mx-100 {
-  margin: 100px 0;
+  margin: $s100 0;
 }
 
 .px-100 {
-  padding: 100px 0;
+  padding: $s100 0;
 }
 
-.n-header-title {
-  @extend .text-center;
-  @extend .text-uppercase;
-  font-size: $font-size-21px;
+.letter-space {
   letter-spacing: 0.2em;
+}
+
+%n-header-title {
+  @extend .text-uppercase;
 
   a {
     @extend .position-relative;
 
     &::after {
+      @extend .d-flex;
       content: "";
-      display: flex;
-      background: no-repeat center/ 189px 10px
-        url("../../assets/images/common/n-header-title.png");
-      height: 10px;
+      background-repeat: no-repeat !important;
+      height: $n-header-height;
+    }
+  }
+}
+
+.n-header-title {
+  @extend %n-header-title;
+  @extend .letter-space;
+  @extend .text-center;
+  font-size: $font-size-21px;
+
+  a {
+    &::after {
+      background: center/ 189px 10px url("../../assets/images/common/n-header-title.png");
       margin: 12px 0 18px;
+    }
+  }
+}
+
+.n-header-title-2 {
+  @extend %n-header-title;
+  font-size: $font-size-25px;
+
+  a {
+    &::after {
+      background: left/ 64px 8px url("../../assets/images/common/n-header-title-2.png");
     }
   }
 }

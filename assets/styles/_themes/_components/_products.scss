@@ -1,10 +1,11 @@
 .products-item {
-  position: relative;
-  display: block;
+  @extend .d-block;
+  @extend .position-relative;
+  margin-bottom: $s60;
 
   &:hover {
     .products-item__view {
-      opacity: 1;
+      @include opacity(1);
     }
 
     .products-item__info__name {
@@ -19,28 +20,30 @@
   }
 
   &__img {
-    position: relative;
-    overflow: hidden;
-    display: block;
+    @extend .position-relative;
+    @extend .overflow-hidden;
+    @extend .d-block;
 
     img {
+      @extend .d-block;
+      margin: 0 auto;
       @include size(263px, 327px);
     }
 
     span {
+      @extend .position-absolute;
+      @extend .d-none;
       color: $white;
       font-size: $font-size-16px;
-      position: absolute;
       left: 5px;
       top: 5px;
       transform: rotate(-45deg);
       z-index: 2;
-      display: none;
     }
 
     &::after {
+      @extend .position-absolute;
       content: "";
-      position: absolute;
       border-style: solid;
       border-width: 56px 56px 0 0;
       border-color: $primary transparent transparent transparent;
@@ -51,8 +54,8 @@
     }
 
     &::before {
+      @extend .position-absolute;
       content: "";
-      position: absolute;
       background: $primary;
       top: 0;
       left: -67px;
@@ -63,10 +66,10 @@
   }
 
   &__view {
+    @extend .position-absolute;
     background: $bg-black;
     justify-content: center;
     align-items: center;
-    position: absolute;
     width: 100%;
     top: 297px;
     display: flex;
@@ -76,6 +79,7 @@
     a {
       color: $product-viewmore-link;
       display: flex;
+      font-size: $font-size-14px;
       justify-content: center;
       align-items: center;
       flex: 1 auto;

@@ -33,6 +33,10 @@ mixin n-header-title(name="Header title")
   h3.n-header-title
     a(href="#")= name
 
+mixin n-header-title-2(name="Header title")
+  h4.n-header-title-2
+    a(href="#")= name
+
 //- Products
 
 mixin products(asset="../assets/images/products/1.jpg")
@@ -87,3 +91,7 @@ mixin card-wine(asset="../assets/images/blog/blog_1.jpg")
       p.card-text
         | Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang Nổ thăng long tạo cảm giác hương phấn, êm dịu, vui tươi, sản phẩm được đóng chai dung tích 750ml...
       a.btn-readmore(href='#') Read more
+
+//- tag cloud
+mixin tag(data)
+  a.aside-tag__link(href="#") #{data.name}
