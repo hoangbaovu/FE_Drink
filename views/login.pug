@@ -1,0 +1,24 @@
+extends ./layouts/layouts.pug
+
+block title
+  | Login
+
+block content
+  .container
+    include components/_breadcrumb
+    section
+      .d-flex
+        +n-header-title-2("Đăng nhập")
+        a.btn.btn-primary.btn-wine.px-5.py-2.mx-1.my-3.ml-auto.text-uppercase(href="#") Đăng ký
+      .row
+        .col-md-12
+          form.login
+            h4 Khách hàng đăng nhập
+            p.mb-5 Nếu bạn có một tài khoản, xin vui lòng đăng nhập.
+            +input("Email", "text")
+            +input("Password", "password")
+            .offset-sm-2
+              a.mx-1(href="#") Quên mật khẩu?
+            .offset-sm-2.d-flex
+              button.btn.btn-primary.btn-wine.mx-1.my-3.text-uppercase(type='submit') Đăng nhập
+

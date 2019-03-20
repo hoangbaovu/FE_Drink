@@ -132,3 +132,13 @@ mixin card-wine(asset="../assets/images/blog/blog_1.jpg")
 //- tag cloud
 mixin tag(data)
   a.aside-tag__link(href="#") #{data.name}
+
+//- Form input
+
+mixin input(name="Name", type="text")
+  .form-group.row
+    label.col-sm-2.col-form-label
+      | #{name}
+      span.text-danger *
+    .col-sm-10
+      input.form-control(type=type, placehold=name)
