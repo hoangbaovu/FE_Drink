@@ -80,6 +80,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "register.html",
       template: path.join(__dirname, "views", "register.pug")
+    }),
+
+    new HtmlWebpackPlugin({
+      filename: "order.html",
+      template: path.join(__dirname, "views", "order.pug")
     })
   ],
   module: {
