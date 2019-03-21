@@ -22,7 +22,7 @@
   &--list {
     border-bottom: $border-width solid $gray-200;
     margin-bottom: 0;
-    padding-bottom: 20px;
+    padding-bottom: $s20;
 
     .products-item__info {
       align-items: flex-start;
@@ -37,7 +37,7 @@
       background: none;
       width: auto;
       top: 100%;
-      bottom: 20px;
+      bottom: $s20;
       @include opacity(1);
 
       .btn-wine {
@@ -45,7 +45,7 @@
       }
 
       a {
-        margin-right: 30px;
+        margin-right: $s30;
       }
     }
 
@@ -121,7 +121,7 @@
       align-items: center;
       flex: 1 auto;
       text-align: center;
-      height: 30px;
+      height: $s30;
       text-decoration: none;
 
       @include hover {

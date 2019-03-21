@@ -1,0 +1,26 @@
+.table-cart {
+
+  @extend .text-uppercase;
+  border: $table-border-width solid $table-border-color;
+  color: #212121;
+  text-align: center;
+
+  thead {
+    th {
+      border: $table-border-width solid $table-border-color;
+    }
+  }
+
+  th, td {
+    border: $table-border-width solid $table-border-color;
+    vertical-align: middle;
+  }
+
+  &__img {
+    @include size(150px);
+  }
+
+  &__price {
+    color: $primary;
+  }
+}
