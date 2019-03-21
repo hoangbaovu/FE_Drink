@@ -6,6 +6,10 @@
   border: 0;
   border-radius: 0;
   text-transform: uppercase;
+
+  @include hover {
+    color: $primary;
+  }
 }
 
 .btn-readmore {
