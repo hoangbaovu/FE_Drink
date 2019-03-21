@@ -55,7 +55,45 @@
 }
 
 .n-header-title-3 {
-  @extend .text-uppercase;
+  @extend %n-header-title;
   font-size: $font-size-18px;
-  margin-bottom: 40px;
+  margin-bottom: $s40;
+}
+
+// 404 Page
+.page-404 {
+  @extend .d-flex;
+  @extend .justify-content-center;
+  @extend .align-items-end;
+  background: no-repeat top center/ contain url("../../assets/images/common/404.png");
+  min-height: 536px;
+  margin-top: $s30;
+
+  &__wrapper {
+    @extend .d-flex;
+  }
+
+  &__nav {
+    @extend .d-flex;
+    @extend .justify-content-center;
+    @extend .align-items-center;
+    @extend .text-uppercase;
+    font-size: $font-size-16px;
+  }
+
+  &__link {
+    @extend .position-relative;
+    margin: 0 $s20;
+    text-decoration: $link-hover-decoration;
+
+    &::after {
+      @extend .position-absolute;
+      border-style: solid;
+      border-width: 5px 0 5px 6px;
+      border-color: transparent transparent transparent $black;
+      content: "";
+      right: -12px;
+      top: 7px;
+    }
+  }
 }
