@@ -65,6 +65,38 @@ mixin products(asset="../assets/images/products/1.jpg")
           sup đ
       a.btn.btn-primary.btn-wine(href="#") Add to card
 
+//- Products List
+
+mixin products-list(asset="../assets/images/products/1.jpg")
+  .products-item.products-item--list&attributes(attributes)
+    .row
+      .col-md-4
+        a.products-item__img(href="#")
+          span
+          img(src=asset)
+      .col-md-8
+        .products-item__info
+          h5.products-item__info__name
+            a(href="#") Rượu vang Đà Lạt
+          p.price
+            span.price__new
+              | 370.000
+              sup đ
+            span.price__old
+              | 450.000
+              sup đ
+          .products-item__desc
+            | Một hợp chất có trong rượu vang được gọi là resveratro có khả năng làm tăng tối đa tuổi thọ. Resveratro còn có khả năng ngăn chặn mật độ
+            | ôxy hoá của protein béo.
+          .products-item__view
+            a.btn.btn-primary.btn-wine(href="#") Add to card
+            a(href="#")
+              i.fas.fa-heart
+              | Yêu thích
+            a(href="#")
+              i.fas.fa-signal
+              | So sánh
+
 //- home-list-product-fluid
 
 mixin home-wine-1987(number)
