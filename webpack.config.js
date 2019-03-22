@@ -70,6 +70,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "blog-detail.html",
       template: path.join(__dirname, "views", "blog-detail.pug")
+    }),
+
+    new HtmlWebpackPlugin({
+      filename: "login.html",
+      template: path.join(__dirname, "views", "login.pug")
     })
   ],
   module: {
