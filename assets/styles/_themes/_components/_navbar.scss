@@ -1,5 +1,5 @@
 .navbar-dark {
-  padding: 14px 0 !important;
+  padding: 14px !important;
 
   &.bg-dark {
     background: $bg-black !important;
@@ -7,7 +7,7 @@
 
   .navbar-nav {
     .nav-item {
-      margin-right: 20px;
+      margin-right: $s20;
     }
 
     .nav-link {
@@ -22,6 +22,17 @@
     .nav-link-menu {
       text-transform: uppercase;
       letter-spacing: 0.2em;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .dropdown-menu {
+      background: $bg-black;
+      padding-left: $s10;
+    }
+
+    .dropdown__title {
+      color: $white;
     }
   }
 
