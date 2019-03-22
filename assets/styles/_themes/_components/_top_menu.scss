@@ -2,18 +2,31 @@
   background: rgba($white, 0.1);
   padding: 12px 0;
   box-shadow: $box-shadow;
-  z-index: 1;
+  position: absolute;
   width: 100%;
-  @extend .position-absolute;
+  z-index: 1;
+
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+    position: relative;
+  }
 
   .container {
     @extend .d-flex;
+
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+    }
   }
 
   &__list {
-    @extend .d-flex;
+    display: flex;
     font-size: $top_menu-font-size;
     margin: 0;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
 
     li {
       margin: 0 12px;
@@ -42,8 +55,17 @@
   }
 
   &__form {
+    @extend .d-flex;
     margin: -5px 0 0;
-    @extend .ml-auto;
+
+    @include media-breakpoint-down(md) {
+      @include size(100%, auto);
+      margin-top: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-left: auto;
+    }
 
     input {
       background: transparent;
@@ -52,13 +74,27 @@
       font-size: $top_menu-font-size;
       padding-left: 12px;
 
+      @include media-breakpoint-down(md) {
+        color: $black;
+        border: $border-width solid $gray-600;
+        font-size: $top_menu-font-size-sm;
+        padding-top: $s10;
+        padding-bottom: $s10;
+        @include size(100%, auto);
+      }
+
       @include media-breakpoint-up(lg) {
+        color: $white;
         @include size(220px, auto);
       }
 
       &::placeholder {
         color: rgba($white, 0.5);
         font-style: italic;
+
+        @include media-breakpoint-down(md) {
+          color: $black;
+        }
       }
     }
 
@@ -68,7 +104,35 @@
 
       i {
         color: $white;
+
+        @include media-breakpoint-down(md) {
+          color: $black;
+          padding: 0 $s20;
+        }
       }
+    }
+  }
+}
+
+.top-menu-navbar {
+  a {
+    color: $white;
+
+    @include hover {
+      color: $primary;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+
+  &__list {
+    @extend .list-unstyled;
+    margin-top: $s10;
+
+    li {
+      margin-bottom: $s10;
     }
   }
 }
