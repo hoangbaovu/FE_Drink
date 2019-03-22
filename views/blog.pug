@@ -1,0 +1,14 @@
+extends ./layouts/layouts.pug
+
+block title
+  | Blog
+
+block content
+  .container
+    include components/_breadcrumb
+    section
+      +n-header-title-2("Blog")
+      .row
+        - for (i = 1; i < 10; i++)
+          .col-md-4.my-3
+            +card-wine("../assets/images/blog/blog_1.jpg")
