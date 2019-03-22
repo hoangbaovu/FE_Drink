@@ -1,0 +1,32 @@
+extends ./layouts/layouts.pug
+
+block title
+  | Register
+
+block content
+  .container
+    include components/_breadcrumb
+    section
+      .d-flex
+        +n-header-title-2("Đăng ký")
+        a.btn.btn-primary.btn-wine.px-5.py-2.mx-1.my-3.ml-auto.text-uppercase(href="#") Đăng nhập
+      .row
+        .col-md-12
+          form.login
+            h5.mb-3.text-uppercase Thông tin cá nhân
+            +input("Tên trước", "text")
+            +input("Tên sau", "text")
+            +input("Email", "email")
+            +input("Password", "password")
+            +input("Re Password", "password")
+            .offset-sm-2.form-check.mb-3
+              .mx-1
+                input#registerNews.form-check-input(type="checkbox", value="1")
+                label.form-check-label(for="registerNews")
+                  | Đăng ký nhận bản tin
+            .offset-sm-2
+              a.mx-1(href="#") Quên mật khẩu?
+            .offset-sm-2.d-flex
+              button.btn.btn-primary.btn-wine.mx-1.my-3.text-uppercase(type="submit") Đăng Ký
+              a.btn.btn-primary.btn-wine.mx-1.my-3.text-uppercase(href="/") Quay lại
+
