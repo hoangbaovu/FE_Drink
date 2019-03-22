@@ -55,6 +55,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "cart.html",
       template: path.join(__dirname, "views", "cart.pug")
+    }),
+
+    new HtmlWebpackPlugin({
+      filename: "introduction.html",
+      template: path.join(__dirname, "views", "introduction.pug")
     })
   ],
   module: {
