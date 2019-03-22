@@ -1,0 +1,64 @@
+extends ./layouts/layouts.pug
+
+block title
+  | Blog Detail
+
+block content
+  .container
+    include components/_breadcrumb
+    +n-header-title-2("Blog")
+    .blog
+      .aside.blog__left
+        section.aside__news
+          +n-header-title-3("Bài viết mới nhất")
+          - for (i = 1; i < 4; i++)
+            .news-item
+              a.news-item__img(href="#")
+                img(src=`../assets/images/blog/blog_widget_${i}.jpg`, alt="")
+              .news-item__wrap
+                h5.news-item__title
+                  a(href="#") Cách sắp xếp nội thất trong nhà
+                .news-item__time
+                  i.far.fa-calendar
+                  time(datetime="2015-06-12") 12/06/2015
+        section
+          +n-header-title-3("Blog Tags")
+          .aside-tag
+            each data in tag
+              +tag(data)
+        section
+          +n-header-title-3("Latest Video")
+          .aside-video
+            iframe(width='100%', src='https://www.youtube.com/embed/PkZNo7MFNFg', frameborder='0', allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen='')
+      .blog__right
+        .blog-post
+          .blog-post-header
+            a(href="#")
+              img(src="../assets/images/blog/blog-detail.jpg", alt="")
+            h2.blog-post-header__title Vang Thăng Long Classic
+            .blog-post-header__info
+              p Đăng bởi Giangle | 30/06/2015 | 60 bình luận
+          .blog-post-content
+            p Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên từhoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang Nổ thăng long tạo cảmgiác hương phấn, êm dịu, vui tươi, sản phẩm được đóng chai dung tích 750ml.Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang Nổ thăng long tạo cảm giác hương phấn, êm dịu, vui tươi, sản phẩm được đóng chai dung tích 750ml...
+        form.blog-form
+          h4 Đóng góp ý kiến
+          .form-group.row
+            label.col-sm-2.col-form-label
+              | Tên
+              span.text-danger *
+            .col-sm-10
+              input.form-control(type='text')
+          .form-group.row
+            label.col-sm-2.col-form-label
+              | Email
+              span.text-danger *
+            .col-sm-10
+              input.form-control(type='email')
+          .form-group.row
+            label.col-sm-2.col-form-label
+              | Ý kiến
+              span.text-danger *
+            .col-sm-10
+              textarea.form-control(rows='8')
+          .offset-sm-2
+            button.btn.btn-primary.mx-1.text-uppercase(type='submit') Gửi ý kiến
