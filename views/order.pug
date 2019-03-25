@@ -1,0 +1,54 @@
+extends ./layouts/layouts.pug
+
+block title
+  | Order
+
+block content
+  .container
+    include components/_breadcrumb
+    section
+      +n-header-title-2("Đơn hàng")
+      .order
+        .order__left
+          .order__header
+            h5.text-uppercase Danh sách đơn hàng
+            p.order__status
+              span Trạng thái
+              -var arr = ['Tất cả (16)','Đã hủy(10)','Chưa duyệt (0)','Đã thanh toán-chờ mua hàng (0)','Hàng đã về-chờ giao hàng (0)','Đã kết thúc (6)']
+              each data in arr
+                a.mx-2= data
+          .order__body
+            table.table.table-cart
+              thead
+                tr
+                  - var th_data = ['STT','MÃ HÓA ĐƠN/ NGÀY MUA HÀNG','KHO NHẬN HÀNG','SỐ SP','TỔNG TIỀN','TÌNH TRẠNG','THAO TÁC']
+                  each data in th_data
+                    th(scope='col')= data
+              tbody
+                - for ( i = 1; i < 5; i++ )
+                  tr
+                    td= i
+                    td LEANHGIANG89 - 17/06/2015
+                      time.order__time 01:36 14/03/2015
+                    td.text-uppercase Hà Đông
+                    td 7
+                    td Đã thanh toán
+                    td
+                      | 345.000
+                      sup.text-lowercase đ
+                    td
+                      a(href="#") Chi tiết
+        .order__right
+          .order__infouser
+            h5.order__infouser__title Thông tin khách hàng
+            .d-flex.mb-3
+              i.fas.fa-user
+              | Giang Le
+              br
+              | anhgiangle98@gmail.com
+            .d-flex.mb-3
+              i.fas.fa-map-marker-alt
+              | Tòa nhà Hà Nội Group 442 Đội Cấn, Ba Đình, Hà Nội
+            .d-flex.mb-3
+              i.fas.fa-phone
+              | (04) 3768 9804

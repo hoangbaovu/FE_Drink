@@ -14,6 +14,7 @@ $s10: 10px;
 $s20: 20px;
 $s30: 30px;
 $s40: 40px;
+$s30: 30px;
 $s50: 50px;
 $s60: 60px;
 $s100: 100px;
@@ -72,3 +73,9 @@ $breadcrumb-active-color: $primary;
 
 // n-header
 $n-header-height: $s10;
+
+// Order
+$order-header-bg: #fafafa;
+$order-table-td-padding: $s20 $s10;
+$order-table-th-font-size: $font-size-12px;
+$order-table-tbody-font-size: $font-size-14px;
