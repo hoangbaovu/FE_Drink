@@ -35,6 +35,12 @@
   &__left {
     @include make-col(7);
 
+    @include media-breakpoint-down(md) {
+      @include make-col(12);
+      margin-top: -250px;
+      padding: $s20;
+    }
+
     .home-product-img {
       @extend .position-relative;
       @extend .overflow-hidden;
@@ -43,7 +49,7 @@
         @extend .position-absolute;
         color: $white;
         font-size: $font-size-39px;
-        left: 10px;
+        left: $s10;
         top: 9px;
         transform: rotate(-45deg);
         z-index: 2;
@@ -68,11 +74,14 @@
         left: -89px;
         transform: rotate(-45deg);
         @include size(100%, 1px);
+
+        @include media-breakpoint-down(md) {
+          top: 74px;
+        }
       }
 
       img {
         width: 100%;
-        margin-top: 22px;
       }
     }
 
@@ -89,12 +98,19 @@
   @extend .text-uppercase;
   font-size: $font-size-25px;
 
+  @include media-breakpoint-down(sm) {
+    text-align: center;
+  }
+
   &::after {
     @extend .d-block;
     content: "";
-    background: no-repeat left/ 64px 8px
-      url("../../assets/images/common/n-header-title-2.png");
-    height: 10px;
+    background: no-repeat left/ 64px 8px url("../../assets/images/common/n-header-title-2.png");
+    height: $s10;
+
+    @include media-breakpoint-down(sm) {
+      background-position: center;
+    }
   }
 }
 
@@ -103,6 +119,10 @@
   color: $primary;
   font-size: $font-size-34px;
   margin: 32px 0;
+
+  @include media-breakpoint-down(sm) {
+    text-align: center;
+  }
 }
 
 .home-product-desc {
@@ -158,8 +178,8 @@
     @extend .position-absolute;
     content: "";
     border-top: $border-width solid $white;
-    width: 268px;
-    left: -10px;
+    width: 248px;
+    left: -$s10;
   }
 
   @include hover {
@@ -199,16 +219,16 @@
       font-size: $font-size-72px;
       border-left: $border-width solid $white;
       border-right: $border-width solid $white;
-      padding: 2px 10px;
+      padding: 2px $s10;
 
       &::before {
         @extend %psudo;
-        top: 10px;
+        top: $s10;
       }
 
       &::after {
         @extend %psudo;
-        bottom: 10px;
+        bottom: $s10;
       }
     }
   }
