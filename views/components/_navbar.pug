@@ -8,3 +8,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
       ul.navbar-nav.ml-auto
         each data in navbar_menu
           +navbar_menu(data)
+      .top-menu-navbar
+        ul.top-menu-navbar__list
+          each data in top_menu
+            +top_menu(data)

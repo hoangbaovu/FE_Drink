@@ -22,7 +22,8 @@ $s100: 100px;
 // Top menu
 
 $top_menu: $primary;
-$top_menu-font-size: 12px;
+$top_menu-font-size: $font-size-12px;
+$top_menu-font-size-sm: $font-size-16px;
 
 // Carousel
 
