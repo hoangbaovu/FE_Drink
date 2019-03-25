@@ -85,6 +85,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "order.html",
       template: path.join(__dirname, "views", "order.pug")
+    }),
+
+    new HtmlWebpackPlugin({
+      filename: "404.html",
+      template: path.join(__dirname, "views", "404.pug")
     })
   ],
   module: {
