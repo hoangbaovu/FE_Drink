@@ -93,6 +93,11 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
+      filename: "delivery-address.html",
+      template: path.join(__dirname, "views", "delivery-address.pug")
+    }),
+    
+    new HtmlWebpackPlugin({
       filename: "404.html",
       template: path.join(__dirname, "views", "404.pug")
     })
