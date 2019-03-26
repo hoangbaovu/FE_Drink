@@ -1,0 +1,93 @@
+extends ./layouts/layouts.pug
+
+block title
+  | Introduction | Wine 1987
+
+block content
+  .container
+    include components/_breadcrumb
+    section
+      +n-header-title-2("Giới thiệu")
+      .row.my-4
+        .col-md-6
+          h4.text-uppercase Địa chỉ của bạn
+        .col-md-6
+          a.text-info.ml-auto(href="#")
+            u Thêm địa chỉ
+      .row
+        .col-md-6
+          form
+            +input-delivery("Tên", "Giang")
+            +input-delivery("Họ & tên đệm", "Lê Anh")
+            +input-delivery("Công ty", "Cổ phần công nghệ DKT")
+            +input-delivery("Địa chỉ", "Tòa nhà Hà Nội Group, 442 Đội Cấn, Ba Đình, Hà Nội")
+            +input-delivery("Tên", "Vũ")
+            +input-delivery("Thành phố", "Hà Nội")
+            +input-delivery("Quốc Tịch", "Việt Nam")
+            +input-delivery("Postal/Zip Code", "2300089")
+            +input-delivery("Phone", "0974554928")
+            .offset-sm-3.form-check.mb-3
+              .mx-1
+                +checkbox("Đặt làm địa chỉ mặc định")
+            .offset-sm-3.d-flex
+              button.btn.btn-info.bg-info.mx-1.my-1.rounded-0.text-uppercase(type="submit") Chỉnh sửa địa chỉ
+              button.btn.btn-primary.btn-wine.mx-1.my-1.text-uppercase(type="submit") Xoá
+        .col-md-6
+          form
+            +input-delivery("Tên", "Vũ")
+            +input-delivery("Họ & tên đệm", "Lê Anh")
+            +input-delivery("Công ty", "Cổ phần công nghệ DKT")
+            +input-delivery("Địa chỉ", "Tòa nhà Hà Nội Group, 442 Đội Cấn, Ba Đình, Hà Nội")
+            +input-delivery("Tên", "Giang")
+            .form-group.row
+              label.col-sm-3.col-form-label
+                | Thành Phố
+              .col-sm-9
+                select.custom-select
+                  each data, key in city
+                    option(value=key+1)= data.name
+            .form-group.row
+              label.col-sm-3.col-form-label
+                | Quốc Tịch
+              .col-sm-9
+                select.custom-select
+                  each data, key in country
+                    option(value=key+1)= data.name
+            +input-delivery("Postal/Zip Code", "2300089")
+            +input-delivery("Phone", "0974554928")
+            .offset-sm-3.form-check.mb-3
+              .mx-1
+                +checkbox("Đặt làm địa chỉ mặc định")
+            .offset-sm-3.d-flex
+              button.btn.btn-info.bg-info.mx-1.my-1.rounded-0.text-uppercase(type="submit") Cập nhật địa chỉ
+              button.btn.btn-primary.btn-wine.mx-1.my-1.text-uppercase(type="submit") Thoát
+      .row
+        .col-md-6
+          form.border-top.pt-5
+            +input-delivery("Tên", "Giang").form-control-plaintext
+            +input-delivery("Họ & tên đệm", "Lê Anh").form-control-plaintext
+            +input-delivery("Công ty", "Cổ phần công nghệ DKT").form-control-plaintext
+            +input-delivery("Địa chỉ", "Tòa nhà Hà Nội Group, 442 Đội Cấn, Ba Đình, Hà Nội").form-control-plaintext
+            +input-delivery("Tên", "Giang").form-control-plaintext
+            +input-delivery("Thành phố", "Hà Nội").form-control-plaintext
+            +input-delivery("Quốc Tịch", "Việt Nam").form-control-plaintext
+            +input-delivery("Postal/Zip Code", "2300089").form-control-plaintext
+            +input-delivery("Phone", "0974554928").form-control-plaintext
+            .offset-sm-3.form-check.mb-3.d-flex
+                a.text-info.ml-auto(href="#")
+                  u Chỉnh sửa địa chỉ
+      .row
+        .col-md-6
+          form.border-top.pt-5
+            +input-delivery("Tên", "Giang").form-control-plaintext
+            +input-delivery("Họ & tên đệm", "Lê Anh").form-control-plaintext
+            +input-delivery("Công ty", "Cổ phần công nghệ DKT").form-control-plaintext
+            +input-delivery("Địa chỉ", "Tòa nhà Hà Nội Group, 442 Đội Cấn, Ba Đình, Hà Nội").form-control-plaintext
+            +input-delivery("Tên", "Giang").form-control-plaintext
+            +input-delivery("Thành phố", "Hà Nội").form-control-plaintext
+            +input-delivery("Quốc Tịch", "Việt Nam").form-control-plaintext
+            +input-delivery("Postal/Zip Code", "2300089").form-control-plaintext
+            +input-delivery("Phone", "0974554928").form-control-plaintext
+            .offset-sm-3.form-check.mb-3.d-flex
+                a.text-info.ml-auto(href="#")
+                  u Chỉnh sửa địa chỉ
