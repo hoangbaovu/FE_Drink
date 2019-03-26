@@ -97,3 +97,27 @@
     }
   }
 }
+
+// location
+.location {
+  margin: $s30 0;
+  &__icon {
+    color: $gray-600;
+    margin: $s10 - 3 $s20 0 0;
+  }
+}
+
+// Social Icon
+.social-icon {
+  &__item {
+    @extend .d-flex;
+    @extend .justify-content-center;
+    @extend .align-items-center;
+    margin: $s10;
+  }
+
+  i {
+    color: $gray-600;
+    font-size: $font-size-18px;
+  }
+}
