@@ -54,7 +54,4 @@ block content
               a.page-link(href='#')
                 i.fas.fa-caret-right
         .product-list__wrapper
-          .row
-            - for (i = 1; i < 13; i++)
-              .col-md-4
-                +products(`../assets/images/products/${i}.jpg`)
+          #product-list.row

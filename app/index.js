@@ -8,3 +8,6 @@ import "styles/styles.scss";
 // ================================
 // START YOUR APP HERE
 // ================================
+
+require('./products');
+require('./cart');

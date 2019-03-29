@@ -1,5 +1,5 @@
 {
-  "name": "FE_Drink",
+  "name": "fe-drink",
   "version": "1.0.0",
   "description": "",
   "author": "hoangbaovu",
@@ -7,13 +7,15 @@
   "homepage": "https://ineo.vn",
   "scripts": {
     "start": "cross-env NODE_ENV=dev webpack-dev-server --progress --mode development --config webpack.config.dev.js",
-    "build": "webpack -p --progress --mode production --config webpack.config.build.js"
+    "build": "webpack -p --progress --mode production --config webpack.config.build.js",
+    "server": "json-server --watch db.json"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/hoangbaovu/FE_Drink.git"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "lodash": "4.17.11"
   },
   "devDependencies": {
