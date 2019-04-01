@@ -10,8 +10,8 @@ async function getProduct(url) {
 function render() {
   getProduct(url).then(res => {
     const product = res.data;
-    for (let i in product) {
-      result.innerHTML += generateHTML(product[i]);
+    for (let item in product) {
+      result.innerHTML += generateHTML(product[item]);
     }
   });
 }
@@ -21,7 +21,7 @@ function generateHTML(item) {
             <div class="products-item">
               <a class="products-item__img" href="#">
                 <span></span>
-                <img src="${item.image}" />
+                <img class="products-item__image" src="${item.image}" />
               </a>
               <div class="products-item__view">
                 <a href="#"><i class="fas fa-heart"></i>Yêu thích</a><a href="#"><i class="fas fa-signal"></i>So sánh</a><a
@@ -33,7 +33,7 @@ function generateHTML(item) {
                   <span class="price__new">${item.price}<sup>đ</sup></span>
                   <span class="price__old">${item.price_old}<sup>đ</sup></span>
                 </p>
-                <a class="btn btn-primary btn-wine" href="#">Add to card</a>
+                <button type="button" class="btn btn-primary btn-wine add-to-cart">Add to card</button>
               </div>
             </div>
           </div>`

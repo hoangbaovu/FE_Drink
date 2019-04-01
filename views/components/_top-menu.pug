@@ -3,6 +3,14 @@
     ul.top-menu__list.list-unstyled
       each data in top_menu
         +top_menu(data)
+      li
+        <a class="dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">Giỏ hàng (1)</a>
+        <ul class="dropdown-menu dropdown-menu-lg-right dropdown-cart">
+          li
+            p.cart-total-price.float-left Tổng tiền: 0đ
+            <a class="btn btn-info float-right" href="/cart.html">Xem giỏ hàng</a>
+          .clearfix
+        </ul>
     form.top-menu__form
       input(type='search', placeholder='Tìm kiếm ở đây', aria-label='Search')
       button.submit(type='submit')
