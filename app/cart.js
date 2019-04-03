@@ -1,26 +1,25 @@
 $('document').ready(function () {
   let addToCartButtons = document.getElementsByClassName('add-to-cart');
-  for (let i = 0; i < addToCartButtons.length; i++) {
+  let addToCartButtonsLength = addToCartButtons.length;
+  for (let i = 0; i < addToCartButtonsLength; i++) {
     button = addToCartButtons[i];
     button.addEventListener('click', addToCartClicked);
   }
 
   let quantityInputs = document.getElementsByClassName('cart-quantity-input');
-  console.log(quantityInputs.length)
-  for (let i = 0; i < quantityInputs.length; i++) {
+  let quantityInputsLength = quantityInputs.length;
+  for (let i = 0; i < quantityInputsLength; i++) {
     let input = quantityInputs[i];
     input.addEventListener('change', quantityChanged);
   }
-});
 
-function ready() {
   let removeCartItemButton = document.getElementsByClassName('btn-remove-item');
-  console.log(removeCartItemButton)
-  for (let i = 0; i < removeCartItemButton.length; i++) {
+  let removeCartItemButtonLength = removeCartItemButton.length;
+  for (let i = 0; i < removeCartItemButtonLength; i++) {
     button = removeCartItemButton[i];
     button.addEventListener('click', removeCartItem);
   }
-}
+});
 
 function removeCartItem(event) {
   let buttonClicked = event.target;
@@ -40,10 +39,9 @@ function updateCartTotal() {
   let cartItemContainer = document.getElementsByClassName('dropdown-cart')[0];
   let cartItems = cartItemContainer.getElementsByClassName('item');
   let total = 0;
-  for (let i = 0; i < cartItems.length; i++) {
-    let cartItem = cartItems[i];
-    let priceElement = cartItem.getElementsByClassName('item__price')[0];
-    let quantityElement = cartItem.getElementsByClassName('cart-quantity-input')[0];
+  for (item of cartItems) {
+    let priceElement = item.getElementsByClassName('item__price')[0];
+    let quantityElement = item.getElementsByClassName('cart-quantity-input')[0];
     let price = parseFloat(priceElement.innerText.replace('đ', ''));
     let quantity = quantityElement.value;
     total = total + (price * quantity);
@@ -65,15 +63,15 @@ function addItemToCart(productName, productPrice, productImage) {
   let cartRow = document.createElement('li');
   let cartItem = document.getElementsByClassName('dropdown-cart')[0];
   let cartItemNames = cartItem.getElementsByClassName('item__name')
-  for (let i = 0; i < cartItemNames.length; i++) {
-    if (cartItemNames[i].innerText == productName) {
+  for (let item of cartItemNames) {
+    if (item.innerText == productName) {
       alert('Sản phẩm đã được thêm vào giỏ hàng');
       return
     }
   }
   let cartRowContents = `<div class="item">
                           <div class="item-left">
-                            <img src="${productImage}" alt="" />
+                            <img class="item__img" src="${productImage}" alt="" />
                             <div class="item-info">
                               <span class="item__name">${productName}</span>
                               <span class="item__price">${productPrice}</span>
@@ -87,9 +85,59 @@ function addItemToCart(productName, productPrice, productImage) {
                           </div>
                         </div>`
   cartRow.innerHTML = cartRowContents;
-  cartItem.append(cartRow);
+  cartItem.appendChild(cartRow);
   cartRow.getElementsByClassName('btn-remove-item')[0].addEventListener('click', removeCartItem);
-  cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
+  cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged);
+  productQuantity = cartRow.getElementsByClassName('cart-quantity-input')[0].value;
+
+  setLocalStorage(productImage, productName, productPrice, productQuantity);
 }
 
-ready();
+function setLocalStorage(image, name, price, quantity) {
+  var oldLocalCart = JSON.parse(localStorage.getItem('productList')) || [];
+  let newLocalCart = {
+    image,
+    name,
+    price: parseFloat(price.replace('đ', '')),
+    quantity: parseInt(quantity)
+  }
+  oldLocalCart.push(newLocalCart);
+  localStorage.setItem('productList', JSON.stringify(oldLocalCart));
+}
+
+function getLocalStorage() {
+  const productList = localStorage.getItem('productList');
+  products = JSON.parse(productList);
+  if (!products) {
+    products = []
+  }
+
+  products.map(product => {
+    const { image, name, price, quantity } = product;
+    generateHTMLCart(image, name, price, quantity);
+  });
+  updateCartTotal();
+}
+
+function generateHTMLCart(image, name, price, quantity = 1) {
+  let cartRow = document.createElement('li');
+  let cartItem = document.getElementsByClassName('dropdown-cart')[0];
+  let cartRowContents = `<div class="item">
+                        <div class="item-left">
+                          <img class="item__img" src="${image}" alt="" />
+                          <div class="item-info">
+                            <span class="item__name">${name}</span>
+                            <span class="item__price">${price}đ</span>
+                          </div>
+                        </div>
+                        <div class="item-right ml-auto">
+                          <div class="item__quantity">
+                            <input class="cart-quantity-input" type="number" value="${quantity}">
+                          </div>
+                          <button class="btn btn-xs btn-danger btn-remove-item">x</button>
+                        </div>
+                      </div>`
+  cartRow.innerHTML = cartRowContents;
+  cartItem.append(cartRow);
+}
+getLocalStorage();

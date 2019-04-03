@@ -8,6 +8,7 @@ block content
     include components/_breadcrumb
     section
       +n-header-title-2("Giỏ hàng")
+      #welcomeMessage
       table.table.table-cart
         thead
           tr
@@ -15,7 +16,7 @@ block content
             each data in th_data
               th(scope='col')= data
         tbody
-          - for ( i = 1; i < 5; i++ )
+          - for ( i = 1; i < 2; i++ )
             tr
               td
                 a(href="#")
