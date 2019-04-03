@@ -8,30 +8,14 @@ block content
     include components/_breadcrumb
     section
       +n-header-title-2("Giỏ hàng")
-      #welcomeMessage
       table.table.table-cart
         thead
           tr
             - var th_data = ['Ảnh', 'Tên sản phẩm', 'Giá', 'Số lượng', 'Tổng số', 'Xoá']
             each data in th_data
               th(scope='col')= data
-        tbody
-          - for ( i = 1; i < 2; i++ )
-            tr
-              td
-                a(href="#")
-                  img.table-cart__img(src="../assets/images/products/1.jpg", alt="")
-              td Rượu vang đỏ
-              td.table-cart__price
-                | 345.000
-                sup.text-lowercase đ
-              td 1
-              td.table-cart__price
-                | 345.000
-                sup.text-lowercase đ
-              td
-                a.btn.btn-link(href="#")
-                  i.far.fa-trash-alt
+        tbody#cart-list
+      #no-item.text-center
       .d-flex.justify-content-end
         a.btn.btn-wine(href="#") Tiếp tục mua hàng
         a.btn.btn-wine.mx-3(href="#") Xóa
