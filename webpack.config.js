@@ -96,7 +96,12 @@ module.exports = {
       filename: "delivery-address.html",
       template: path.join(__dirname, "views", "delivery-address.pug")
     }),
-    
+
+    new HtmlWebpackPlugin({
+      filename: "payment.html",
+      template: path.join(__dirname, "views", "payment.pug")
+    }),
+
     new HtmlWebpackPlugin({
       filename: "404.html",
       template: path.join(__dirname, "views", "404.pug")

@@ -6,8 +6,14 @@ block title
 block content
   .container
     include components/_breadcrumb
+    section.mb-5
+      nav.nav.nav-pills.flex-column.flex-sm-row
+        a.rounded-0.flex-sm-fill.text-sm-center.nav-link.active(href='/cart.html') 1. Giỏ hàng
+        a.rounded-0.flex-sm-fill.text-sm-center.nav-link.active(href='/delivery-address.html') 2. Địa chỉ giao hàng
+        a.rounded-0.flex-sm-fill.text-sm-center.nav-link(href='/payment.html') 3. Thanh toán
+
     section
-      +n-header-title-2("Giới thiệu")
+      +n-header-title-2("Địa chỉ")
       .row.my-4
         .col-md-6
           h4.text-uppercase Địa chỉ của bạn
@@ -30,8 +36,9 @@ block content
               .mx-1
                 +checkbox("Đặt làm địa chỉ mặc định")
             .offset-sm-3.d-flex
-              button.btn.btn-info.bg-info.mx-1.my-1.rounded-0.text-uppercase(type="submit") Chỉnh sửa địa chỉ
-              button.btn.btn-primary.btn-wine.mx-1.my-1.text-uppercase(type="submit") Xoá
+              a.btn.btn-info.bg-info.mx-1.my-1.rounded-0.text-uppercase(href="payment.html") Giao đến địa chỉ này
+              button.btn.btn-primary.mx-1.my-1.rounded-0.text-uppercase sửa địa chỉ
+              button.btn.btn-wine.btn-danger.mx-1.my-1.text-uppercase Xoá
         .col-md-6
           form
             +input-delivery("Tên", "Vũ")

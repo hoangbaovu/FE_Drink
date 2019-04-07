@@ -2,10 +2,13 @@
 function getLocalStorageCartPage() {
   let cartListElement = document.getElementById('cart-list');
   let productList = localStorage.getItem('productList');
+  let noItem = document.getElementById('no-item');
   products = JSON.parse(productList);
   if (!products) {
     products = []
-    document.getElementById('no-item').innerHTML = `Bạn chưa có sản phẩm nào!`;
+    if (noItem) {
+      noItem.innerHTML = `Bạn chưa có sản phẩm nào!`;
+    }
   }
 
   if (cartListElement) {
@@ -25,6 +28,17 @@ function generateHTMLCartPage(image, name, price, quantity) {
           <td class="table-cart__price">${price * quantity}<sup class="text-lowercase">đ</sup></td>
           <td><a class="btn btn-link" href="#"><i class="far fa-trash-alt"></i></a></td>
         </tr>`
+}
+
+let deleteCart = document.getElementById('delete-cart');
+
+if (deleteCart) {
+  deleteCart.addEventListener('click', handleDeleteCart);
+}
+
+function handleDeleteCart() {
+  localStorage.removeItem('productList');
+  location.reload();
 }
 
 getLocalStorageCartPage();

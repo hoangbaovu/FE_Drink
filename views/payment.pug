@@ -1,0 +1,50 @@
+extends ./layouts/layouts.pug
+
+block title
+  | Thanh toán
+
+block content
+  .container
+    include components/_breadcrumb
+    section.mb-5
+      nav.nav.nav-pills.flex-column.flex-sm-row
+        a.rounded-0.flex-sm-fill.text-sm-center.nav-link.active(href='/cart.html') 1. Giỏ hàng
+        a.rounded-0.flex-sm-fill.text-sm-center.nav-link.active(href='/delivery-address.html') 2. Địa chỉ giao hàng
+        a.rounded-0.flex-sm-fill.text-sm-center.nav-link.active(href='/payment.html') 3. Thanh toán
+    section
+      +n-header-title-2("Thanh toán")
+      .order
+        form.order__left
+          p 1. Chọn hình thức giao hàng
+          .form-check
+            input#shipping-1.form-check-input(type='radio', name='shipping-1', value='option1', checked='')
+            label.form-check-label
+              | Giao hàng tiêu chuẩn (Dự kiến giao hàng vào Thứ hai, 15/04/2019):
+          p 2. Chọn hình thức thanh toán
+          .form-check
+            input#method_payment_cod.form-check-input(type='radio', name='payment', value='method_payment_cod', checked='')
+            label.form-check-label
+              | Thanh toán tiền mặt khi nhận hàng
+          .form-check
+            input#cybersource.form-check-input(type='radio', name='payment', value='cybersource')
+            label.form-check-label
+              | Thanh toán bằng thẻ quốc tế Visa, Master, JCB
+          .form-check
+            input#payatm.form-check-input(type='radio', name='payment', value='payatm')
+            label.form-check-label
+              | Thẻ ATM nội địa/Internet Banking (Miễn phí thanh toán)
+          button.btn.btn-primary.my-3.btn-purchase(type='submit') Đặt mua
+        .order__right
+          .order__infouser
+            h5.order__infouser__title Địa chỉ giao hàng
+            .d-flex.mb-3
+              i.fas.fa-user
+              | Giang Le
+              br
+              | anhgiangle98@gmail.com
+            .d-flex.mb-3
+              i.fas.fa-map-marker-alt
+              | Tòa nhà Hà Nội Group 442 Đội Cấn, Ba Đình, Hà Nội
+            .d-flex.mb-3
+              i.fas.fa-phone
+              | (04) 3768 9804

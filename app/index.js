@@ -12,3 +12,4 @@ import "styles/styles.scss";
 require('./products');
 require('./cart');
 require('./cart-page');
+require('./payment');

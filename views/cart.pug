@@ -6,6 +6,11 @@ block title
 block content
   .container
     include components/_breadcrumb
+    section.mb-5
+      nav.nav.nav-pills.flex-column.flex-sm-row
+        a.rounded-0.flex-sm-fill.text-sm-center.nav-link.active(href='/cart.html') 1. Giỏ hàng
+        a.rounded-0.flex-sm-fill.text-sm-center.nav-link(href='/delivery-address.html') 2. Địa chỉ giao hàng
+        a.rounded-0.flex-sm-fill.text-sm-center.nav-link(href='/payment.html') 3. Thanh toán
     section
       +n-header-title-2("Giỏ hàng")
       table.table.table-cart
@@ -17,6 +22,6 @@ block content
         tbody#cart-list
       #no-item.text-center
       .d-flex.justify-content-end
-        a.btn.btn-wine(href="#") Tiếp tục mua hàng
-        a.btn.btn-wine.mx-3(href="#") Xóa
+        a.btn.btn-wine(href="/delivery-address.html") Tiếp tục mua hàng
+        a.btn.btn-wine.mx-3#delete-cart(href="#") Xóa
         a.btn.btn-wine(href="#") Cập nhật
