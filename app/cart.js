@@ -1,4 +1,14 @@
-$('document').ready(function () {
+
+if (document.readyState == 'complete') {
+  document.addEventListener('DOMContentLoaded', ready)
+} else {
+  setTimeout(function () {
+    ready();
+    console.log('done');
+  }, 1000);
+}
+
+function ready() {
   const addToCartButtons = document.getElementsByClassName('add-to-cart');
   const addToCartButtonsLength = addToCartButtons.length;
   for (let i = 0; i < addToCartButtonsLength; i++) {
@@ -19,7 +29,7 @@ $('document').ready(function () {
     button = removeCartItemButton[i];
     button.addEventListener('click', removeCartItem);
   }
-});
+}
 
 function removeCartItem(event) {
   const buttonClicked = event.target;
