@@ -1,12 +1,6 @@
-
-if (document.readyState == 'complete') {
-  document.addEventListener('DOMContentLoaded', ready)
-} else {
-  setTimeout(function () {
-    ready();
-    console.log('done');
-  }, 1000);
-}
+setTimeout(() => {
+  ready();
+}, 1000);
 
 function ready() {
   const addToCartButtons = document.getElementsByClassName('add-to-cart');
@@ -62,29 +56,29 @@ function updateCartTotal() {
 function addToCartClicked(event) {
   const button = event.target;
   const shopItem = button.parentElement.parentElement;
-  const productName = shopItem.getElementsByClassName('products-item__info__name')[0].innerText;
-  const productPrice = shopItem.getElementsByClassName('price__new')[0].innerText;
-  const productImage = shopItem.getElementsByClassName('products-item__image')[0].src;
-  addItemToCart(productName, productPrice, productImage);
+  const name = shopItem.getElementsByClassName('products-item__info__name')[0].innerText;
+  const price = shopItem.getElementsByClassName('price__new')[0].innerText;
+  const image = shopItem.getElementsByClassName('products-item__image')[0].src;
+  addItemToCart(name, price, image);
   updateCartTotal();
 }
 
-function addItemToCart(productName, productPrice, productImage) {
+function addItemToCart(name, price, image) {
   const cartRow = document.createElement('li');
   const cartItem = document.getElementsByClassName('dropdown-cart')[0];
   const cartItemNames = cartItem.getElementsByClassName('item__name')
   for (let item of cartItemNames) {
-    if (item.innerText == productName) {
+    if (item.innerText == name) {
       alert('Sản phẩm đã được thêm vào giỏ hàng');
       return
     }
   }
   const cartRowContents = `<div class="item">
                             <div class="item-left">
-                              <img class="item__img" src="${productImage}" alt="" />
+                              <img class="item__img" src="${image}" alt="" />
                               <div class="item-info">
-                                <span class="item__name">${productName}</span>
-                                <span class="item__price">${productPrice}</span>
+                                <span class="item__name">${name}</span>
+                                <span class="item__price">${price}</span>
                               </div>
                             </div>
                             <div class="item-right ml-auto">
@@ -98,9 +92,9 @@ function addItemToCart(productName, productPrice, productImage) {
   cartItem.appendChild(cartRow);
   cartRow.getElementsByClassName('btn-remove-item')[0].addEventListener('click', removeCartItem);
   cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged);
-  productQuantity = cartRow.getElementsByClassName('cart-quantity-input')[0].value;
+  quantity = cartRow.getElementsByClassName('cart-quantity-input')[0].value;
 
-  setLocalStorage(productImage, productName, productPrice, productQuantity);
+  setLocalStorage(image, name, price, quantity);
 }
 
 function setLocalStorage(image, name, price, quantity) {

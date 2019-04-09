@@ -4,17 +4,20 @@ const url = 'http://localhost:3000/products';
 const productListElement = document.getElementById('product-list');
 
 async function getProduct(url) {
-  return await axios.get(url);
+  const result = await axios.get(url);
+  return result;
 }
 
-function render() {
-  getProduct(url).then(res => {
+getProduct(url)
+  .then(res => {
     const products = res.data;
     if (productListElement) {
       products.map(product => productListElement.innerHTML += generateHTML(product));
     }
+  })
+  .catch(e => {
+    console.log(e);
   });
-}
 
 function generateHTML(product) {
   return `<div class="col-md-4">
@@ -38,5 +41,3 @@ function generateHTML(product) {
             </div>
           </div>`
 }
-
-render();
